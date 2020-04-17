@@ -87,8 +87,10 @@ def get_osx_config(browser: str) -> dict:
         )
     elif browser.lower() == "chromium":
         cookie_file = "~/Library/Application Support/Chromium/Default/Cookies"
+    elif browser.lower() == "microsoft edge":
+        cookie_file = "~/Library/Application Support/Microsoft Edge/Default/Cookies"
     else:
-        raise ValueError("Browser must be either Chrome or Chromium.")
+        raise ValueError("Browser must be either Chrome, Chromium or Microsoft Edge.")
 
     config = {
         "my_pass": keyring.get_password(
